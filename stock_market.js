@@ -1,5 +1,3 @@
-const arr = [45, 24, 35, 31, 40, 38, 11];
-
 const maxProfit = function(arr) {
   let tempArr = [];
   for (let i in arr) {
@@ -9,8 +7,14 @@ const maxProfit = function(arr) {
     }
   }
   const maxNum = Math.max(...tempArr);
+  if (maxNum < 1) {
+    return - 1;
+  }
   return maxNum;
 };
 
-console.log(maxProfit(arr));
+const arr = [45, 24, 35, 31, 40, 38, 11];
+console.log(maxProfit(arr)); // 16
+const arr1 = [45, 35, 31, 28, 11];
+console.log(maxProfit(arr1)); // -1
 
